@@ -28,8 +28,8 @@ export const isValidAddress = (address: string): boolean => {
  * @returns {BN} The converted BN value.
  */
 export const formatNumberToBalance = (value: number, decimals?: number): BN => {
-  const multiplier = new BN(10).pow(new BN(decimals || 18))
-  return new BN(value).mul(multiplier)
+  const multiplier = new BN(10).pow(new BN(decimals || 18));
+  return multiplier.muln(value);
 }
 
 /**
